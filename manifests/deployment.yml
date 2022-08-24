@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "lolitsbot-5e3a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "lolitsbot-5e3a"
+  template:
+    metadata:
+      labels:
+        app: "lolitsbot-5e3a"
+    spec:
+      containers:
+        - name: "lolitsbot-5e3a"
+          image: "dhuchges.azurecr.io/lolitsbot"
+          ports:
+          - containerPort: 80
